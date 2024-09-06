@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BulkyWeb_Razor.Pages.Categories
 {
+    [BindProperties] // this binds all properties
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _db;
-        [BindProperty]
+        //[BindProperty] this binds single one
         public Category Category { get; set; }
 
         public CreateModel(ApplicationDbContext db)
